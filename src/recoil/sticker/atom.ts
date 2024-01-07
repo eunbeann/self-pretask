@@ -3,13 +3,15 @@ import { recoilPersist } from "recoil-persist";
 
 const { persistAtom } = recoilPersist();
 
-interface positionStateProps {
-  x: number;
-  y: number;
+export interface postedStickerProps {
+  postedStickerId: number;
+  stickerImage: string;
+  positionX: number;
+  positionY: number;
 }
 
-export const positionState = atom<positionStateProps>({
-  key: "positionState",
-  default: { x: 0, y: 0 },
+export const postedSticker = atom<postedStickerProps[]>({
+  key: "postedSticker",
+  default: [],
   effects_UNSTABLE: [persistAtom],
 });
