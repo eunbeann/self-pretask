@@ -116,8 +116,8 @@ const gStyle = css`
     touch-action: manipulation;
     line-height: 1;
 
-    width: 32rem;
-    height: 56.8rem;
+    width: 375px;
+    height: 667px;
     /* height: 100vh; */
     /* border:1px solid transparent; */
   }
@@ -160,80 +160,10 @@ const gStyle = css`
     display: flex;
     justify-content: center;
 
-    /* 미디어쿼리 적용 예정 */
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
 
-    /* @media (min-width: 1200px){ 
+    @media (min-width: 1200px) {
       font-size: 62.5%;
-    } */
-    @media (min-width: 1000px) {
-      font-size: 70%;
-    }
-    @media (min-width: 931px) and (max-width: 999px) {
-      font-size: 62.5%;
-    }
-    //Surface Pro 7
-    @media (min-width: 901px) and (max-width: 930px) {
-      font-size: 62.5%;
-    }
-    //
-    @media (min-width: 831px) and (max-width: 900px) {
-      font-size: 160%;
-    }
-    //iPad Air
-    @media (min-width: 790px) and (max-width: 830px) {
-      font-size: 150%;
-    }
-    //iPad Mini
-    @media (min-width: 750px) and (max-width: 789px) {
-      font-size: 145%;
-    }
-    @media (min-width: 600px) and (max-width: 749px) {
-      font-size: 100%;
-      /* @media (min-height: 740px) and (max-height: 999px){
-            height: 80%!important;
-      } */
-    }
-    @media (min-width: 471px) and (max-width: 580px) {
-      font-size: 93%;
-    }
-    //
-    @media (min-width: 451px) and (max-width: 470px) {
-      font-size: 16px;
-    }
-    //iPhone XR & Galaxy S20 Ultra & A51/71
-    @media (min-width: 410px) and (max-width: 450px) {
-      font-size: 83%;
-    }
-    //iPhone 12 Pro
-    @media (min-width: 386px) and (max-width: 409px) {
-      font-size: 77%;
-    }
-    //
-    @media (min-width: 384px) and (max-width: 385px) {
-      font-size: 75%;
-    }
-    //iPhone SE
-    @media (min-width: 371px) and (max-width: 383px) {
-      font-size: 73%;
-    }
-    @media (min-width: 361px) and (max-width: 370px) {
-      font-size: 70%;
-    }
-    @media (min-width: 331px) and (max-width: 361px) {
-      font-size: 70%;
-    }
-    //Galaxy S9+
-    @media (min-width: 301px) and (max-width: 330px) {
-      font-size: 62%;
-    }
-    //Galaxy Fold
-    @media (min-width: 251px) and (max-width: 300px) {
-      font-size: 54%;
-    }
-
-    @media (max-width: 250px) {
-      font-size: 46%;
     }
   }
   ul,
@@ -261,6 +191,65 @@ const gStyle = css`
     &:focus {
       outline: none;
     }
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    color: #222;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 200;
+    margin: 0 50px;
+  }
+
+  .react-draggable,
+  .cursor {
+    cursor: move;
+  }
+  .no-cursor {
+    cursor: auto;
+  }
+  .cursor-y {
+    cursor: ns-resize;
+  }
+  .cursor-x {
+    cursor: ew-resize;
+  }
+
+  .react-draggable strong {
+    background: #ddd;
+    border: 1px solid #999;
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 10px;
+    padding: 3px 5px;
+    text-align: center;
+  }
+
+  .box {
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 3px;
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+  }
+  .no-pointer-events {
+    pointer-events: none;
+  }
+  .hovered {
+    background-color: gray;
+  }
+
+  .rem-position-fix {
+    position: static !important;
   }
 `;
 
